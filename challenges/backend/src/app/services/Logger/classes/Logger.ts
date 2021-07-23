@@ -13,4 +13,5 @@ export class Logger implements ILogger {
         console.log(`[LOG]: ${message}`);
     }
 
+
 }

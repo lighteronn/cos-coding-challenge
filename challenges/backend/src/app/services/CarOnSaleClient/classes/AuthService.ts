@@ -1,6 +1,6 @@
-import {IAuthService} from "../interface/IAuthService";
+import { IAuthService } from "../interface/IAuthService";
 import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { injectable, inject } from "inversify";
+import { injectable } from "inversify";
 import "reflect-metadata";
 
 @injectable()
@@ -17,11 +17,13 @@ export class AuthService implements IAuthService {
     this.userMailId = userMailId;
     this.password = password;
   }
-  public async getUserToken(): Promise<string> {
-    const result:AxiosResponse = await this.instance.put(
-      `/v1/authentication/${this.userMailId}`,
-      { password: this.password }
-    );
-   return result.data.token
+  public async getUserToken(): Promise<any> {
+    const result: AxiosResponse = await this.instance
+      .put(`/v1/authentication/${this.userMailId}`, { password: this.password })
+      .catch((err) => {
+        throw err;
+      });
+
+    return result.data;
   }
 }
