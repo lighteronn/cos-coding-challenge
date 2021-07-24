@@ -1,4 +1,4 @@
-export interface IAuctionData {
+export interface IRunningAuctions {
   items: IAuction[];
   total: number;
 }

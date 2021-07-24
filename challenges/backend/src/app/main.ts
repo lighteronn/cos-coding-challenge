@@ -3,8 +3,6 @@ import { ILogger } from "./services/Logger/interface/ILogger";
 import { Logger } from "./services/Logger/classes/Logger";
 import { DependencyIdentifier } from "./DependencyIdentifiers";
 import { AuctionMonitorApp } from "./AuctionMonitorApp";
-import { IAuthService } from "./services/CarOnSaleClient/interface/IAuthService";
-import { AuthService } from "./services/CarOnSaleClient/classes/AuthService";
 import { CarOnSaleClient } from "./services/CarOnSaleClient/classes/CarOnSaleClient";
 import { ICarOnSaleClient } from "./services/CarOnSaleClient/interface/ICarOnSaleClient";
 
@@ -19,7 +17,6 @@ const container = new Container({
  * Register dependencies in DI environment.
  */
 container.bind<ILogger>(DependencyIdentifier.LOGGER).to(Logger);
-container.bind<IAuthService>(DependencyIdentifier.AUTH_SERVICE).to(AuthService);
 container.bind<ICarOnSaleClient>(DependencyIdentifier.CAR_ON_SALE_CLIENT).to(CarOnSaleClient)
 /*
  * Inject all dependencies in the application & retrieve application instance.

@@ -3,6 +3,7 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 import { injectable } from "inversify";
 import "reflect-metadata";
 
+
 @injectable()
 export class AuthService implements IAuthService {
   private readonly instance: AxiosInstance;
