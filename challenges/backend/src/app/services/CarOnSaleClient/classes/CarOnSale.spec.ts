@@ -1,7 +1,6 @@
 import { expect } from "chai";
 import "mocha";
 import nock from "nock";
-import "axios-mock-adapter";
 import { CarOnSaleClient } from "./CarOnSaleClient";
 describe("CarOnSaleClient", () => {
   afterEach(() => {
